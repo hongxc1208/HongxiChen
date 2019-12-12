@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Product</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body {
+            font-size: 62.5%;
+            background-color: #000;
+        }
+
+        .image-box {
+            position: relative;
+        }
+
+        .image-box:not(:first-of-type) {
+            margin: 22px 0;
+        }
+
+        .text-wrap {
+            position: absolute;
+            right: 0;
+            top: 42%;
+            /* padding: 18px 0; */
+            border-right: 20px solid #add268;
+            font-size: 60px;
+            height: 34%;
+        }
+
+        .text-group {
+            position: relative;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .text-group .text {
+            text-align: right;
+            padding-right: 40px;
+            line-height: 1.4;
+        }
+
+        .text-group .text:first-of-type {
+            font-size: 40px;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .info {
+            padding-top: 136px;
+            position: relative;
+        }
+
+        .info .title {
+            font-size: 6em;
+            text-align: center;
+            padding-bottom: 46px;
+        }
+
+        .info-text {
+            width: 1198px;
+            box-sizing: border-box;
+            margin: 20px auto;
+            line-height: 1.5;
+            font-size: 3em;
+            border-left: 14px solid #add268;
+            padding-left: 30px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .info-content {
+            margin-top: -4px;
+        }
+
+        .info .date {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: calc(10% - 150px);
+            margin-left: calc(50% - 100px);
+            font-size: 1.5em;
+            font-weight: 800;
+            transform-origin: left top;
+            transform: rotate(90deg);
+        }
+
+        .ideas {
+            width: 1728px;
+            padding-top: 182px;
+            margin: 0 auto;
+        }
+
+        .ideas-image {
+            width: 60%;
+        }
+
+        .ideas-content {
+            width: 40%;
+            box-sizing: border-box;
+            padding-left: 70px;
+        }
+
+        .ideas-title {
+            font-size: 4em;
+            padding-top: 50px;
+        }
+
+        .ideas-text {
+            line-height: 1.9;
+            padding-top: 60px;
+            padding-bottom: 28px;
+            font-size: 2.4em;
+        }
+
+        .ideas .line {
+            width: 120px;
+            height: 14px;
+            background-color: #add268;
+        }
+
+        .study {
+            width: 1406px;
+            margin: 0 auto;
+            padding-top: 226px;
+        }
+
+        .common-head {
+            padding-bottom: 100px;
+        }
+
+        .common-head .number {
+            color: #f4d323;
+            float: left;
+            font-size: 120px;
+        }
+
+        .common-head .title {
+            float: left;
+            padding-top: 20px;
+            font-size: 40px;
+            padding-left: 14px;
+        }
+
+        .common-head .high {
+            color: #f4d323;
+        }
+
+        .img-list {
+            height: 784px;
+            position: relative;
+        }
+
+        .img-list img {
+            position: absolute;
+        }
+
+        .img-list img:nth-of-type(1) {
+            left: 86px;
+        }
+
+        .img-list img:nth-of-type(2) {
+            right: 232px;
+        }
+
+        .img-list img:nth-of-type(3) {
+            right: 128px;
+            bottom: 66px;
+        }
+
+        .study .body {
+            padding-left: 90px;
+        }
+
+        .study .desc {
+            font-size: 30px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .study .desc:not(:last-of-type) {
+            margin-bottom: 82px;
+        }
+
+        .study .body .desc:before {
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            content: '';
+            left: -54px;
+            top: 8px;
+            background-color: #f4d323;
+        }
+
+        .study .map-image {
+            padding-top: 96px;
+            padding-bottom: 90px;
+        }
+
+        .study .map-image img {
+            width: 100%;
+        }
+
+        .study .three-img {
+            padding-top: 80px;
+            padding-bottom: 124px;
+        }
+
+        .three-img img {
+            width: 100%;
+        }
+
+        .news {
+            margin-top: 154px;
+            padding-bottom: 524px;
+        }
+
+        .news .title {
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .news-text {
+            font-size: 30px;
+            line-height: 1.6;
+            padding-top: 20px;
+        }
+        
+        @media (max-width: 1700px) {
+            .info-text,
+            .study {
+                width: 100%;
+            }
+            .img-list img:nth-of-type(1) {
+                left: -30px;
+            }
+            .img-list img:nth-of-type(2) {
+                right: 0;
+            }
+            .img-list img:nth-of-type(3) {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .study .body {
+                padding-left: 20px;
+            }
+
+            .ideas-image {
+                width: 100%;
+            }
+
+            .ideas {
+                width: 100%;
+                padding-top: 100px;
+            }
+
+            .ideas-content {
+                width: 100%;
+                padding-left: 20px;
+            }
+
+            .common-head .number {
+                width: 15%;
+                padding-left: 2px;
+                font-size: 68px;
+            }
+
+            .common-head .title {
+                padding: 0;
+                width: 84%;
+                font-size: 24px;
+            }
+
+            .study {
+                width: 100%;
+                padding-top: 100px;
+            }
+            .img-list img {
+                transform: scale(.6);
+            }
+            .img-list img:nth-of-type(1) {
+                left: -84px;
+                transform: scale(.3);
+            }
+
+            .img-list img:nth-of-type(2) {
+                right: -31px;
+            }
+
+            .img-list img:nth-of-type(3) {
+                right: -25px;
+                bottom: 0px;
+            }
+            .text-wrap {
+                font-size: 44px;
+            }
+
+            .text-group .text:first-of-type {
+                font-size: 28px;
+            }
+
+            .info .title {
+                font-size: 4em;
+            }
+
+            .info-text {
+                width: 90%;
+                margin: 20px 0;
+            }
+
+            .info .date {
+                font-size: 2em;
+                margin-top: calc(10% - 100px);
+                margin-left: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .info {
+                padding-top: 78px;
+            }
+
+            .text-wrap {
+                font-size: 20px;
+            }
+
+            .text-group .text:first-of-type {
+                font-size: 14px;
+            }
+
+            .info .title {
+                font-size: 2.2em;
+            }
+
+            .info-text {
+                width: 90%;
+                margin: 20px 0;
+                font-size: 2.5em;
+            }
+
+            .info .date {
+                font-size: 2em;
+                margin-top: calc(10% - 140px);
+                margin-left: calc(50% - 10px);
+            }
+
+            .ideas-text {
+                padding-top: 32px;
+            }
+
+            .ideas-title {
+                font-size: 2.8em;
+            }
+
+            .common-head {
+                padding-bottom: 0;
+            }
+
+            .common-head .number {
+                width: 15%;
+                padding-left: 1px;
+                font-size: 33px;
+            }
+
+            .common-head .title {
+                padding: 0;
+                width: 84%;
+                font-size: 16px;
+            }
+
+            .study .common-head .desc {
+                width: 150%;
+                font-size: inherit;
+            }
+
+            .study .body {
+                padding-left: 0;
+                overflow: hidden;
+            }
+
+            .img-list {
+                margin-left: -100px;
+                height: 500px;
+            }
+
+            .img-list img {
+                transform: scale(.4);
+            }
+
+            .img-list img:nth-of-type(1) {
+                left: -84px;
+                transform: scale(.3);
+            }
+
+            .img-list img:nth-of-type(2) {
+                right: -84px;
+            }
+
+            .img-list img:nth-of-type(3) {
+                right: -84px;
+                bottom: 0px;
+            }
+
+            .study .body .desc {
+                padding-right: 20px;
+                padding-left: 60px;
+                font-size: 24px;
+            }
+
+            .study .body .desc:before {
+                top: 3px;
+                left: 10px;
+            }
+
+            .study .map-image {
+                width: 100%;
+            }
+
+            .study .three-img {
+                padding-bottom: 60px;
+            }
+
+            .news .title {
+                font-size: 24px;
+            }
+
+            .news-text {
+                font-size: 24px;
+                padding: 20px 6px 20px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="nav" class="clearfix">
+    <div class="title fl">
+        <h1><a href="index.html">WELCOME</a></h1>
+    </div>
+    <div class="nav-bar" id="navBar">
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+    <div class="nav-list fr">
+        <ul class="nav-list-wrap" id="listWrap">
+            <li class="nav-list-item fl"><a href="projects.html">PROJECTS</a></li>
+            <li class="nav-list-item fl"><a href="index.html.html">PROFILE</a></li>
+            <li class="nav-list-item fl"><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="content">
+    <div class="image-box">
+        <img class="image" src="img/dsm.png" alt="">
+        <div class="text-wrap">
+            <div class="text-group font-rebellion">
+                <p class="text">AR DSM</p>
+                <p class="text">SUMMER PARTY</p>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="title font-rebellion">PROJECT DESCRIPTION</div>
+        <div class="info-text">
+            <div class="info-content">
+                Nowadays, as online shopping became more convenience, going to a physical store for purchasing a products is not the only options anymore. Therefore, we research and consider the main elements that attract their customers and what really make offline shopping experience significant. Through using augmented reality tehnology, we bring exciting virtual elements into phyiscal store and create an atmosphere to welcome customers. We want to create a unique experience by turning placecs into playground and encourage customers to explore and social. 
+            </div>
+        </div>
+        <div class="date">20190426</div>
+    </div>
+
+
+    <div class="ideas clearfix">
+        <img class="fl ideas-image" src="img/DSM01.png">
+        <div class="fr ideas-content">
+            <div class="ideas-title font-rebellion">RESEARCH & INTERVIEW </div>
+            <div class="ideas-text">During in-store research, we found out that in Dover Street Market, they not only have a lot of designer clothings, but also art installation that created by professional artists. The employees introduced us that they tried to combine art and fashion together to created a 3D immersive shopping environment. Moreover, different designers brands are located randomly. Dislike regular shopping center which separated clothing by different prices point or style, Dover Street Market mix various designer style and prices into one floor, for instance, customer can see a street wear brand Supreme is located aside of a luxury brand Gucci. This characteristic shows that Dover Street Market encourages its customer to explore different designer brands and try out new things during the experience. After learning Dover Street Market’s value proposition, we think that it is a perfect fit for our augmented reality project since we also want customers to explore in a 3d immersive playground and have fun during the futuristic shopping experience.
+            </div>
+            <div class="line"></div>
+            
+        </div>
+    </div>
+
+
+
+
+    <div class="study">
+        <div class="common-head font-rebellion clearfix">
+            <div class="number">#1</div>
+            <div class="title">
+                <div class="high">part</div>
+                <div class="desc">IDEATION</div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="map-image">
+            <img src="img/dsm02.png" alt="">
+            </div>
+            <div class="desc">One of our group mate — Natalie, she is from Miami. She introduced us that Miami has a beautiful beach, during the summer people there loves to go the beach and have a summer party. During the summer party, people can have fun and meet new friends. Because summer is coming soon, therefore, we really want to transport this beautiful Miami beach summer vibe to a New York in-store environment. The way that enables us to do it is by using Augmented Reality. This technology allows us to display virtual objects and 3D animation on top of a physical environment so that people through using a simple mobile device can interact and have fun with it.
+            <div class="map-image">
+            <img src="img/DSM03.png" alt="">
+            </div>
+
+             <div class="desc">This is the first version of our storyboard, we considered the possibilities of user flow and the augmented reality experience that we wanted to provide with Dover Street Market. First of all, the customer can acknowledge the summer party by either online social media advertisement or simply walking by and get attracted by the party theme. Then they will be meeting with new friends in store and introduced to download the Dover Street Market App that contains the AR functionality inside. Some of the functionalities that we imagine were 1. The app will be able to navigate the customer to a certain brand that they looking for 2. Displace 3d models, animation and background music to provide a playground vibe. During the exploration, customers will be encouraged interact with the virtual elements and take photos to share this unique experience on social media.
+
+            <div class="map-image">
+            <img src="img/DSM04.png" alt="">
+            </div>
+
+            <div class="desc">Then, we together discussed about the core elements that we want to include in this AR experience. Since it is related to beach environment, we want to have a similar style and color palette, therefore we decided on vapor wave tone for the overall aesthetic style. 
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="study">
+        <div class="common-head font-rebellion clearfix">
+            <div class="number">#2</div>
+            <div class="title">
+                <div class="high">part</div>
+                <div class="desc">UI/UX + MODELING + Programming</div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="map-image">
+            <img src="img/UIUX.png" alt="">
+            </div>
+            <div class="desc">Later on, we began to consider the overall user experience and user interface of our app. Since all of our location and installation is at the third and fourth floor of Dover Street Market, we decided to include a simple map to indicated the summer party location. Moreover, there will be text guide in the app to help the user understand how to launch the AR experience. Then, I worked on the user interface design in Adobe XD. In order to match the style of Dover Street Market as much as possible, I looked through their online website to learn about their typeface and color palette. Since Dover Street Market mainly used white, grey and black color, I used the same color and made the app in a very clean and minimal style. 
+            <div class="map-image">
+            <img src="img/DSM05.png" alt="">
+            </div>
+
+             <div class="desc"> In group we talk about detail of the design to make few changes: 1) Instead of grey for confirm button, black is better 2) Different symbolized icons for each locations 3) Instruction page icon change to indicate 3D space.
+            
+
+            <div class="map-image">
+            <img src="img/DSM06.png" alt="">
+            </div>
+
+            <div class="desc">Meanwhile, Natalie and Queena finished their 3d modeling and animation. They did a really good job constructed the 3d models and animated they in C4D. However, when we tried to export it out and used them in unity, we encountered a problem. Since the animation that they made in C4D were using the point level animation, when exported into unity, all the animation were lost and the model doesn’t move anymore. We tried to find online solutions and asked around for helps from professors and classmates, but we couldn’t find the solution to fix this problem. In addition, the material that made in C4D is also using another render, which doesn’t shown in Unity properly as well.
+
+            <h1>&nbsp</h1>
+            <br>For fixing this problem, we had to create our own material in Unity by downing similar texture image online and apply them in a material prefab that we created. By altering the color and transparency we were able to get similar effect that we wanted. On the other hand, for the animation part, I introduced them how to used animation and animator in Unity to quickly created animation that used simply position and rotation. In this way we can get the model movement in Unity.
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="study">
+        <div class="common-head font-rebellion clearfix">
+            <div class="number">#3</div>
+            <div class="title">
+                <div class="high">part</div>
+                <div class="desc">UNITY + SPATIAL AR</div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="map-image">
+            <img src="img/PLACENOTE01.png" alt="">
+            </div>
+            <div class="desc">Since we want to display 3d models and animation into physical space, I started to do research about what kind of tools that we should use and I found that Placenote SDK provides the function that we need. Therefore I downloaded Placenote SDK and beta version app to do some test at home. The image on the left is Placenote indoor navigation function, after scanning the 3d physical environment, I can put down shapes note and later on reload the map for navigation purpose. The image on the right shows a spatial detection function, which detect flat surface and turn them into mesh. Compare these two functions, the indoor navigation doesn’t store the point cloud data on the server ends and only retrieved back the shapes map in Unity. On the other hand, the spatial capture function reload the point cloud map in Unity and give a more clear visual guideline of the physical space. Consider our project purpose of displaying beach element into a 3d space but not navigation. In addition to that, I think flat surface can better helps us to identify a closet of cloth instead of recognizing the color each single cloths. Therefore, I discussed my research with my group mate and we chose to go with spatial capture function by using Placenote SDK.
+            <div class="map-image">
+            <img src="img/DSM07.png" alt="">
+            </div>
+
+             <div class="desc"> Then, we went back to Dover Street Market for choosing out the location that we want. There were couple locations have beach/ocean elements such as a beach tunnel stairs and buoy installation, therefore we scan these areas and saved the map by using PlaceNote. During the process of scanning, because each scene has different level of complexity and interior design elements, the point cloud data capture can be various. If the point cloud number were around 10k, it can cause the app to crash. Therefore I tried my best to only capture the area that contains the information I needed. Moreover, in the beach tunnel stairs environment, there is a top cover , which is a compound curve with only one color painted. This characteristic makes it very difficult for the camera to recognize and capture the top space.
+            
+
+            <div class="map-image">
+            <img src="img/dsm08.png" alt="">
+            </div>
+
+            <div class="desc">However, when we went to Dover Street Market for testing the app, something big happened. Dover Street Market had a frequent switch of installations in approximately 3 weeks. So when we went back again to check our physical location, two of our installations were removed and replaced with new ones. Therefore, we had to rescan the location and rebuild the map and scene in Unity. Since the shop was closing at 5pm that day, we didn’t have enough time to finish all of the deploy and video recording, so that we only finish one spot that day.
+
+            <h1>&nbsp</h1>
+            <br>After the final week, we went back and tried to test the rest of our location. During the testing process, one of our models successfully work. The rest of two couldn’t localized the area. We figure there might be some reason for this problems: 1. The area is too open so the camera couldn’t figure out the boundary of the space. 2. There is not much 3d elements / interior construction in the location so it is hard to identify (one of the area has a flat wall). Thus, we went to choose another two locations and rescan them. After deploy the app to phone and test, the 3d models still couldn’t appear properly due to the location localize error. So at the end we only got two spot properly working in the physical space.
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+
+    
+
+<div class="info">
+        <div class="title font-rebellion">The Final </div>
+        <div class="image-box">
+        <video width="1400" controls>
+        <source src="img/DSMARsummerParty.mp4" type="video/mp4">
+        </video>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="study">
+        
+            <div class="news">
+                <div class="title font-rebellion">CONCLUSION & REFLECTION</div>
+                    <div class="news-text">
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                    This project taught me a lot about the workflow of augmented reality and some of the potential problems of indoor detections. There are many things that I aware of, which should pay attention at the first place. First of all, for indoor spatial detection, it is better to find a location that wouldn’t constantly change interior design in order to keep the scan and functionality of AR. Secondly, we should find objects or structure that are more symbolized and easy to recognized by computer vision so that it wouldn’t confused the system and the localization process. Moreover, if the project wanted to become more commercial, phone camera is not enough for scanning enough accurate point cloud data, should use professional scanning device to enhance the accuracy and precision. During the process of learning I also found many corporations that utilized augmented reality, computer vision and AI algorithm to presenting exhibitions or creating indoor navigation. It helps me to understand that there are many more to explore for indoor AR usage.
+
+                    <h1>&nbsp</h1>
+                    <br>The future of offline shopping has a great potential to be enhanced by using augmented reality. Placing virtual objects and animation into physical space is only the very first steps of the journey. As the book Reality Is Broken by Jane McGonigal describes, our generation were grown up in an environment that filled with electronic devices and games. Many big corporation such as Uber are trying to adopting the elements and principles from games to enhance their user experience. Through the power of technology, we are hopping to help more shop owner to delivery an unforgettable memories to their customer. The future of physical shopping will not limits as going through a boring showroom, but more an interactive and engaging playground that customer can enjoy to explore.s
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div id="footer" class="clearfix">
+    <a class="font-rebellion fl" href="">HONGXI CHEN</a>
+    <a class="font-rebellion fr" href="">NEXT PROJECT</a>
+</div>
+<script src="./js/common.js" defer></script>
+</body>
+
+</html>

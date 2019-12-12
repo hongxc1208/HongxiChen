@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Product</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body {
+            font-size: 62.5%;
+            background-color: #000;
+        }
+
+        .image-box {
+            position: relative;
+        }
+
+        .image-box:not(:first-of-type) {
+            margin: 22px 0;
+        }
+
+        .text-wrap {
+            position: absolute;
+            right: 0;
+            top: 42%;
+            /* padding: 18px 0; */
+            border-right: 20px solid #add268;
+            font-size: 60px;
+            height: 34%;
+        }
+
+        .text-group {
+            position: relative;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .text-group .text {
+            text-align: right;
+            padding-right: 40px;
+            line-height: 1.4;
+        }
+
+        .text-group .text:first-of-type {
+            font-size: 40px;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .info {
+            padding-top: 136px;
+            position: relative;
+        }
+
+        .info .title {
+            font-size: 6em;
+            text-align: center;
+            padding-bottom: 46px;
+        }
+
+        .info-text {
+            width: 1198px;
+            box-sizing: border-box;
+            margin: 20px auto;
+            line-height: 1.5;
+            font-size: 3em;
+            border-left: 14px solid #add268;
+            padding-left: 30px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .info-content {
+            margin-top: -4px;
+        }
+
+        .info .date {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: calc(10% - 150px);
+            margin-left: calc(50% - 100px);
+            font-size: 1.5em;
+            font-weight: 800;
+            transform-origin: left top;
+            transform: rotate(90deg);
+        }
+
+        .ideas {
+            width: 1728px;
+            padding-top: 182px;
+            margin: 0 auto;
+        }
+
+        .ideas-image {
+            width: 60%;
+        }
+
+        .ideas-content {
+            width: 40%;
+            box-sizing: border-box;
+            padding-left: 70px;
+        }
+
+        .ideas-title {
+            font-size: 4em;
+            padding-top: 50px;
+        }
+
+        .ideas-text {
+            line-height: 1.9;
+            padding-top: 60px;
+            padding-bottom: 28px;
+            font-size: 2.4em;
+        }
+
+        .ideas .line {
+            width: 120px;
+            height: 14px;
+            background-color: #add268;
+        }
+
+        .study {
+            width: 1406px;
+            margin: 0 auto;
+            padding-top: 226px;
+        }
+
+        .common-head {
+            padding-bottom: 100px;
+        }
+
+        .common-head .number {
+            color: #f4d323;
+            float: left;
+            font-size: 120px;
+        }
+
+        .common-head .title {
+            float: left;
+            padding-top: 20px;
+            font-size: 40px;
+            padding-left: 14px;
+        }
+
+        .common-head .high {
+            color: #f4d323;
+        }
+
+        .img-list {
+            height: 784px;
+            position: relative;
+        }
+
+        .img-list img {
+            position: absolute;
+        }
+
+        .img-list img:nth-of-type(1) {
+            left: 86px;
+        }
+
+        .img-list img:nth-of-type(2) {
+            right: 232px;
+        }
+
+        .img-list img:nth-of-type(3) {
+            right: 128px;
+            bottom: 66px;
+        }
+
+        .study .body {
+            padding-left: 90px;
+        }
+
+        .study .desc {
+            font-size: 30px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .study .desc:not(:last-of-type) {
+            margin-bottom: 82px;
+        }
+
+        .study .body .desc:before {
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            content: '';
+            left: -54px;
+            top: 8px;
+            background-color: #f4d323;
+        }
+
+        .study .map-image {
+            padding-top: 96px;
+            padding-bottom: 90px;
+        }
+
+        .study .map-image img {
+            width: 100%;
+        }
+
+        .study .three-img {
+            padding-top: 80px;
+            padding-bottom: 124px;
+        }
+
+        .three-img img {
+            width: 100%;
+        }
+
+        .news {
+            margin-top: 154px;
+            padding-bottom: 524px;
+        }
+
+        .news .title {
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .news-text {
+            font-size: 30px;
+            line-height: 1.6;
+            padding-top: 20px;
+        }
+        
+        @media (max-width: 1700px) {
+            .info-text,
+            .study {
+                width: 100%;
+            }
+            .img-list img:nth-of-type(1) {
+                left: -30px;
+            }
+            .img-list img:nth-of-type(2) {
+                right: 0;
+            }
+            .img-list img:nth-of-type(3) {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .study .body {
+                padding-left: 20px;
+            }
+
+            .ideas-image {
+                width: 100%;
+            }
+
+            .ideas {
+                width: 100%;
+                padding-top: 100px;
+            }
+
+            .ideas-content {
+                width: 100%;
+                padding-left: 20px;
+            }
+
+            .common-head .number {
+                width: 15%;
+                padding-left: 2px;
+                font-size: 68px;
+            }
+
+            .common-head .title {
+                padding: 0;
+                width: 84%;
+                font-size: 24px;
+            }
+
+            .study {
+                width: 100%;
+                padding-top: 100px;
+            }
+            .img-list img {
+                transform: scale(.6);
+            }
+            .img-list img:nth-of-type(1) {
+                left: -84px;
+                transform: scale(.3);
+            }
+
+            .img-list img:nth-of-type(2) {
+                right: -31px;
+            }
+
+            .img-list img:nth-of-type(3) {
+                right: -25px;
+                bottom: 0px;
+            }
+            .text-wrap {
+                font-size: 44px;
+            }
+
+            .text-group .text:first-of-type {
+                font-size: 28px;
+            }
+
+            .info .title {
+                font-size: 4em;
+            }
+
+            .info-text {
+                width: 90%;
+                margin: 20px 0;
+            }
+
+            .info .date {
+                font-size: 2em;
+                margin-top: calc(10% - 100px);
+                margin-left: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .info {
+                padding-top: 78px;
+            }
+
+            .text-wrap {
+                font-size: 20px;
+            }
+
+            .text-group .text:first-of-type {
+                font-size: 14px;
+            }
+
+            .info .title {
+                font-size: 2.2em;
+            }
+
+            .info-text {
+                width: 90%;
+                margin: 20px 0;
+                font-size: 2.5em;
+            }
+
+            .info .date {
+                font-size: 2em;
+                margin-top: calc(10% - 140px);
+                margin-left: calc(50% - 10px);
+            }
+
+            .ideas-text {
+                padding-top: 32px;
+            }
+
+            .ideas-title {
+                font-size: 2.8em;
+            }
+
+            .common-head {
+                padding-bottom: 0;
+            }
+
+            .common-head .number {
+                width: 15%;
+                padding-left: 1px;
+                font-size: 33px;
+            }
+
+            .common-head .title {
+                padding: 0;
+                width: 84%;
+                font-size: 16px;
+            }
+
+            .study .common-head .desc {
+                width: 150%;
+                font-size: inherit;
+            }
+
+            .study .body {
+                padding-left: 0;
+                overflow: hidden;
+            }
+
+            .img-list {
+                margin-left: -100px;
+                height: 500px;
+            }
+
+            .img-list img {
+                transform: scale(.4);
+            }
+
+            .img-list img:nth-of-type(1) {
+                left: -84px;
+                transform: scale(.3);
+            }
+
+            .img-list img:nth-of-type(2) {
+                right: -84px;
+            }
+
+            .img-list img:nth-of-type(3) {
+                right: -84px;
+                bottom: 0px;
+            }
+
+            .study .body .desc {
+                padding-right: 20px;
+                padding-left: 60px;
+                font-size: 24px;
+            }
+
+            .study .body .desc:before {
+                top: 3px;
+                left: 10px;
+            }
+
+            .study .map-image {
+                width: 100%;
+            }
+
+            .study .three-img {
+                padding-bottom: 60px;
+            }
+
+            .news .title {
+                font-size: 24px;
+            }
+
+            .news-text {
+                font-size: 24px;
+                padding: 20px 6px 20px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="nav" class="clearfix">
+    <div class="title fl">
+        <h1><a href="index.html">WELCOME</a></h1>
+    </div>
+    <div class="nav-bar" id="navBar">
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+    <div class="nav-list fr">
+        <ul class="nav-list-wrap" id="listWrap">
+            <li class="nav-list-item fl"><a href="projects.html">PROJECTS</a></li>
+            <li class="nav-list-item fl"><a href="index.html.html">PROFILE</a></li>
+            <li class="nav-list-item fl"><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="content">
+    <div class="image-box">
+        <img class="image" src="img/InstructionSetofStranger.png" alt="">
+        <div class="text-wrap">
+            <div class="text-group font-rebellion">
+                <p class="text">INSTRUCTION SETS OF</p>
+                <p class="text">STRANGERS</p>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="title font-rebellion">PROJECT DESCRIPTION</div>
+        <div class="info-text">
+            <div class="info-content">
+                For this project, we are designing a public art installations that allows strangers and passengers in space to voluntarily interact and create experience. Without having any verbal or written descriptions and instructions, our challenge for designing the installation will be to look inviting for people at the first glance. As a team we picked our location at Whispering Gallery at Grand Central Station and collaboratively we created three iterations to learn about passengers behaviors.
+            </div>
+        </div>
+        <div class="date">20190928</div>
+    </div>
+    <div class="ideas clearfix">
+        <img class="fl ideas-image" src="img/GrandCentral.jpg">
+        <div class="fr ideas-content">
+            <div class="ideas-title font-rebellion">RESEARCH & IDEAS</div>
+            <div class="ideas-text">Grand Central Terminal, as a central hub for transportation, is one of the most famous landmark in New York City. Whispering Gallery is located at the lower level of Grand Central Terminal, which near the food court. Whispering Gallery has a patented interlocking ceiling that creates an echoey space. From the observation research we did at Saturday noon, there are around 130 people passing by in only two minutes, but only 15 people were stop and experience talking to each other Whispering gallery. Therefore, our goal for installation is to invite people to stay a while at the space and have an entertained and fun experience.
+            </div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div class="study">
+        <div class="common-head font-rebellion clearfix">
+            <div class="number">#1</div>
+            <div class="title">
+                <div class="high">ITERATION</div>
+                <div class="desc">GlASS HARP INSTRUMENT</div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="img-list">
+                <img class="img-1" src="img/ISFS01.png" alt="">
+                <img class="img-2" src="img/ISFS02.png" alt="">
+                <img class="img-3" src="img/ISFS03.png" alt="">
+            </div>
+            <div class="map-image">
+            <img src="img/Iteation1_FinalTimeLapse.gif" alt="">
+            </div>
+            <div class="desc">Sounds create a beautiful echo in Whispering Gallery. Inspired by music instrument Glass Harp, we decided to intruded a set of glass for people to play notes with. We placed 6 glasses that vibrates different sound, a plastic cup with water onto a glass stand in one of four corner. At first there were no people interact since it looks fragile. Therefore we draw images of finger dipping waters and music notes to make the installation more friendly. Then there were many people try it out and surprised by different sounds they can made.
+            </div>
+
+        </div>
+    </div>
+
+    <div class="study">
+        <div class="common-head font-rebellion clearfix">
+            <div class="number">#2</div>
+            <div class="title">
+                <div class="high">ITERATION</div>
+                <div class="desc">PROJECTION</div>
+            </div>
+        </div>
+        <div class="body">
+
+            <div class="map-image">
+            <img src="img/Projection.jpg" alt="">
+            </div>
+            <div class="desc">Grand Central Terminal has over hundred year of history, every spot can revel profound meaning from the past. Majority of the people were only focusing on their phone when passed by. Therefore, for the second iteration we want to created a projection that attract people attention to the actual space. During the testing, the installation stops many family group to look at and took pictures. The most excited audience were kids, they were stared and pointed at the projection.
+
+        </div>
+    </div>
+
+    <div class="study">
+        <div class="common-head font-rebellion clearfix">
+            <div class="number">#3</div>
+            <div class="title">
+                <div class="high">ITERATION</div>
+                <div class="desc">HALLOWEEN PROJECTION</div>
+            </div>
+        </div>
+        <div class="body">
+
+            <div class="map-image">
+            <img src="img/Halloween02.png" alt="">
+             <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <div class="desc">Combine with the previous two interactions, we want to create a projection pieces plus physical installation. Our original plan was to have an interactive baby doll that has a button on his stomach, when people pressed it there would be a bucketed filled with Halloween candy came down from the ceiling. However, due to the time limited and missing components, we choose to go with plan B. For the projection part we experimented with four different kinds of lighting to test the best result in physical place.
+                <h1>&nbsp</h1>
+                </div>
+            <img src="img/Halloween01.png" alt="">
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <div class="desc">We decorated the doll to looks more Halloween by putting make up and nails on him. When we first placed our installation in Whispering gallery, people were little scared and concerned with the sounds and scene. Therefore, we wrote a note that says Happy Halloween. It helps a lot of give people a sense that they could grab candy from it and it is safe.
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+            <img src="img/InstructionSetofStranger.png" alt="">
+        </div>
+    </div>
+
+
+<div class="info">
+        <div class="title font-rebellion">CONCLUSION & REFLECTION </div>
+        <div class="info-text">
+            <div class="info-content">
+                From three different iterations we did in Whispering Gallery, I learned the important of considering the message that delivered and how to better communicated with strangers. By considering the physical features in the space and combined with our goal and ideas, each of our installation got various degree of interaction from strangers. For future improvement we’d like to experiment with physical computing or involved game elements to the installation.
+
+            </div>
+        </div>
+
+    </div>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+</div>
+
+
+<div id="footer" class="clearfix">
+    <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+    <a class="font-rebellion fl" href="">HONGXI CHEN</a>
+    <a class="font-rebellion fr" href="">NEXT PROJECT</a>
+</div>
+<script src="./js/common.js" defer></script>
+</body>
+
+</html>

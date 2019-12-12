@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Product</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        #content {
+            padding-bottom: 222px;
+        }
+        .image-box {
+            position: relative;
+        }
+        .image-box:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.2);
+        }
+        .image-box:not(:first-of-type) {
+            margin: 22px 0;
+        }
+        .text-wrap {
+            position: absolute;
+            right: 0;
+            top: 42%;
+            /* padding: 18px 0; */
+            border-right: 12px solid #add268;
+            font-size: 34px;
+            height: 34%;
+        }
+        .text-group {
+            position: relative;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .text {
+            text-align: right;
+            padding-right: 20px;
+            line-height: 1.4;
+        }
+        .image {
+            width: 100%;
+        }
+        .w50 {
+            width: 50%;
+            float: left;
+            height: 288px;
+        }
+        @media  (max-width: 768px) {
+            .image,
+            .w50 {
+                height: 300px;
+            }
+            .text-wrap {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 500px) { 
+            #content {
+                padding-top: 30px;
+            }
+            .image,
+            .w50 {
+                height: 200px;
+            }
+            .text-wrap {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav" class="clearfix">
+        <div class="title fl">
+            <h1><a href="index.html">WELCOME</a></h1>
+        </div>
+        <div class="nav-bar" id="navBar">
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+        <div class="nav-list fr">
+            <ul class="nav-list-wrap" id="listWrap">
+                <li class="nav-list-item fl"><a href="projects.html">PROJECTS</a></li>
+                <li class="nav-list-item fl"><a href="index.html">PROFILE</a></li>
+                <li class="nav-list-item fl"><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="image-box">
+            <img class="image" src="img/product_banner5X5.png" alt="">
+            <div class="text-wrap">
+                <div class="text-group font-rebellion">
+                    <p class="text"><a href="5x5.html">HTML/CSS</p>
+                    <p class="text">WEBSITE 5X5</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="image-box">
+            <img class="image" src="img/InstructionSetofStranger.png" alt="">
+            <div class="text-wrap">
+                <div class="text-group font-rebellion">
+                    <p class="text"><a href="InstructionSets.html">INSTRUCTION SETS OF</p>
+                    <p class="text">STRANGERS</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="image-box">
+            <img class="image" src="img/EF1.png" alt="">
+            <div class="text-wrap">
+                <div class="text-group font-rebellion">
+                    <p class="text"><a href="EF1.html">EMERGING TECHNOLOGYI</p>
+                    <p class="text">DIGITAL ASSISTANT</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="image-box">
+            <img class="image" src="img/EFII.png" alt="">
+            <div class="text-wrap">
+                <div class="text-group font-rebellion">
+                    <p class="text"><a href="EF2.html">EMERGING TECHNOLOGY II</p>
+                    <p class="text">DIGITAL ASSISTAN</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="image-box">
+            <img class="image" src="img/MAYA.png" alt="">
+            <div class="text-wrap">
+                <div class="text-group font-rebellion">
+                    <p class="text"><a href="3dCreation.html">DIGITAL 3D CREATION</p>
+                    <p class="text">ANIMATION PLAY</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="image-box">
+            <img class="image" src="img/dsm.png" alt="">
+            <div class="text-wrap">
+                <div class="text-group font-rebellion">
+                    <p class="text"><a href="DSM.html">AR DSM</p>
+                    <p class="text">SUMMER PARTY</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="clearfix">
+        <a class="font-rebellion fl" href="">HONGXI CHEN</a>
+    </div>
+    <script src="./js/common.js" defer></script>
+    <script></script>
+</body>
+
+</html>

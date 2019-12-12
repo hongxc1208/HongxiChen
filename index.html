@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Index</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .img {
+            position: absolute;
+            right: 0;
+            width: 46%;
+            height: 100vh;
+            top: 0;
+            background: url(./img/index_person.png) no-repeat center / cover;
+        }
+
+        .greet {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .greet .wrap {
+            padding-left: 20%;
+        }
+
+        .greet .title {
+            padding-top: 28%;
+            padding-bottom: 14%;
+            font-size: 60px;
+            line-height: 1.5;
+        }
+
+        .greet .desc {
+            font-size: 28px;
+            line-height: 2.14;
+        }
+
+        .greet .text {
+            font-size: 20px;
+            line-height: 2;
+            padding-right: 16%;
+            padding-top: 6%;
+        }
+
+        @media (max-width: 768px) {
+            .greet {
+                width: 56%;
+            }
+
+            .greet .title {
+                padding-top: 50%;
+            }
+
+            .greet .wrap {
+                padding-left: 10%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .img {
+                width: 100%;
+                display: none;
+            }
+
+            .greet {
+                width: 100%;
+                z-index: 1;
+                position: relative;
+            }
+
+            .greet .wrap {
+                padding-left: 0%;
+                text-align: center;
+            }
+
+            .greet .title {
+                padding-top: 50px;
+                font-size: 30px;
+            }
+
+            .greet .text {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav" class="clearfix">
+        <div class="title fl">
+            <h1><a href="index.html">WELCOME</a></h1>
+        </div>
+        <div class="nav-bar" id="navBar">
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+        <div class="nav-list fr">
+            <ul class="nav-list-wrap" id="listWrap">
+                <li class="nav-list-item fl"><a href="projects.html">PROJECTS</a></li>
+                <li class="nav-list-item fl"><a href="index.html">PROFILE</a></li>
+                <li class="nav-list-item fl"><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="img"></div>
+    <div class="greet">
+        <div class="wrap">
+            <div class="title">
+                <h2>HONGXI CHEN</h2>
+            </div>
+            <div class="desc">
+                <p>CREATIVE TECHNOLOGIST</p>
+                <p>ENTREPRENEUR </p>
+                <p>INNOVATOR</p>
+            </div>
+            <div class="text">
+                I’M ENJOY CREATING DIFFERENT EXPERIENCES WITH CUTTING EDGE TECHNOLOGIES AND
+                TRYING TO EXPLORE MORE POSSIBILITIES OF FUTURE FORMS IN CULTURE AND ENTERTAINMENT INDUSTRY.
+            </div>
+        </div>
+    </div>
+    <script src="./js/common.js" defer></script>
+</body>
+
+</html>

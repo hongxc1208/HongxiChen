@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Product</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body {
+            font-size: 62.5%;
+            background-color: #000;
+        }
+
+        .image-box {
+            position: relative;
+        }
+
+        .image-box:not(:first-of-type) {
+            margin: 22px 0;
+        }
+
+        .text-wrap {
+            position: absolute;
+            right: 0;
+            top: 42%;
+            /* padding: 18px 0; */
+            border-right: 20px solid #add268;
+            font-size: 60px;
+            height: 34%;
+        }
+
+        .text-group {
+            position: relative;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .text-group .text {
+            text-align: right;
+            padding-right: 40px;
+            line-height: 1.4;
+        }
+
+        .text-group .text:first-of-type {
+            font-size: 40px;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .info {
+            padding-top: 136px;
+            position: relative;
+        }
+
+        .info .title {
+            font-size: 6em;
+            text-align: center;
+            padding-bottom: 46px;
+        }
+
+        .info-text {
+            width: 1198px;
+            box-sizing: border-box;
+            margin: 20px auto;
+            line-height: 1.5;
+            font-size: 3em;
+            border-left: 14px solid #add268;
+            padding-left: 30px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .info-content {
+            margin-top: -4px;
+        }
+
+        .info .date {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: calc(10% - 150px);
+            margin-left: calc(50% - 100px);
+            font-size: 1.5em;
+            font-weight: 800;
+            transform-origin: left top;
+            transform: rotate(90deg);
+        }
+
+        .ideas {
+            width: 1728px;
+            padding-top: 182px;
+            margin: 0 auto;
+        }
+
+        .ideas-image {
+            width: 60%;
+        }
+
+        .ideas-content {
+            width: 40%;
+            box-sizing: border-box;
+            padding-left: 70px;
+        }
+
+        .ideas-title {
+            font-size: 4em;
+            padding-top: 50px;
+        }
+
+        .ideas-text {
+            line-height: 1.9;
+            padding-top: 60px;
+            padding-bottom: 28px;
+            font-size: 2.4em;
+        }
+
+        .ideas .line {
+            width: 120px;
+            height: 14px;
+            background-color: #add268;
+        }
+
+        .study {
+            width: 1406px;
+            margin: 0 auto;
+            padding-top: 226px;
+        }
+
+        .common-head {
+            padding-bottom: 100px;
+        }
+
+        .common-head .number {
+            color: #f4d323;
+            float: left;
+            font-size: 120px;
+        }
+
+        .common-head .title {
+            float: left;
+            padding-top: 20px;
+            font-size: 40px;
+            padding-left: 14px;
+        }
+
+        .common-head .high {
+            color: #f4d323;
+        }
+
+        .img-list {
+            height: 784px;
+            position: relative;
+        }
+
+        .img-list img {
+            position: absolute;
+        }
+
+        .img-list img:nth-of-type(1) {
+            left: 86px;
+        }
+
+        .img-list img:nth-of-type(2) {
+            right: 232px;
+        }
+
+        .img-list img:nth-of-type(3) {
+            right: 128px;
+            bottom: 66px;
+        }
+
+        .study .body {
+            padding-left: 90px;
+        }
+
+        .study .desc {
+            font-size: 30px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .study .desc:not(:last-of-type) {
+            margin-bottom: 82px;
+        }
+
+        .study .body .desc:before {
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            content: '';
+            left: -54px;
+            top: 8px;
+            background-color: #f4d323;
+        }
+
+        .study .map-image {
+            padding-top: 96px;
+            padding-bottom: 90px;
+        }
+
+        .study .map-image img {
+            width: 100%;
+        }
+
+        .study .three-img {
+            padding-top: 80px;
+            padding-bottom: 124px;
+        }
+
+        .three-img img {
+            width: 100%;
+        }
+
+        .news {
+            margin-top: 154px;
+            padding-bottom: 524px;
+        }
+
+        .news .title {
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .news-text {
+            font-size: 30px;
+            line-height: 1.6;
+            padding-top: 20px;
+        }
+        
+        @media (max-width: 1700px) {
+            .info-text,
+            .study {
+                width: 100%;
+            }
+            .img-list img:nth-of-type(1) {
+                left: -30px;
+            }
+            .img-list img:nth-of-type(2) {
+                right: 0;
+            }
+            .img-list img:nth-of-type(3) {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .study .body {
+                padding-left: 20px;
+            }
+
+            .ideas-image {
+                width: 100%;
+            }
+
+            .ideas {
+                width: 100%;
+                padding-top: 100px;
+            }
+
+            .ideas-content {
+                width: 100%;
+                padding-left: 20px;
+            }
+
+            .common-head .number {
+                width: 15%;
+                padding-left: 2px;
+                font-size: 68px;
+            }
+
+            .common-head .title {
+                padding: 0;
+                width: 84%;
+                font-size: 24px;
+            }
+
+            .study {
+                width: 100%;
+                padding-top: 100px;
+            }
+            .img-list img {
+                transform: scale(.6);
+            }
+            .img-list img:nth-of-type(1) {
+                left: -84px;
+                transform: scale(.3);
+            }
+
+            .img-list img:nth-of-type(2) {
+                right: -31px;
+            }
+
+            .img-list img:nth-of-type(3) {
+                right: -25px;
+                bottom: 0px;
+            }
+            .text-wrap {
+                font-size: 44px;
+            }
+
+            .text-group .text:first-of-type {
+                font-size: 28px;
+            }
+
+            .info .title {
+                font-size: 4em;
+            }
+
+            .info-text {
+                width: 90%;
+                margin: 20px 0;
+            }
+
+            .info .date {
+                font-size: 2em;
+                margin-top: calc(10% - 100px);
+                margin-left: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .info {
+                padding-top: 78px;
+            }
+
+            .text-wrap {
+                font-size: 20px;
+            }
+
+            .text-group .text:first-of-type {
+                font-size: 14px;
+            }
+
+            .info .title {
+                font-size: 2.2em;
+            }
+
+            .info-text {
+                width: 90%;
+                margin: 20px 0;
+                font-size: 2.5em;
+            }
+
+            .info .date {
+                font-size: 2em;
+                margin-top: calc(10% - 140px);
+                margin-left: calc(50% - 10px);
+            }
+
+            .ideas-text {
+                padding-top: 32px;
+            }
+
+            .ideas-title {
+                font-size: 2.8em;
+            }
+
+            .common-head {
+                padding-bottom: 0;
+            }
+
+            .common-head .number {
+                width: 15%;
+                padding-left: 1px;
+                font-size: 33px;
+            }
+
+            .common-head .title {
+                padding: 0;
+                width: 84%;
+                font-size: 16px;
+            }
+
+            .study .common-head .desc {
+                width: 150%;
+                font-size: inherit;
+            }
+
+            .study .body {
+                padding-left: 0;
+                overflow: hidden;
+            }
+
+            .img-list {
+                margin-left: -100px;
+                height: 500px;
+            }
+
+            .img-list img {
+                transform: scale(.4);
+            }
+
+            .img-list img:nth-of-type(1) {
+                left: -84px;
+                transform: scale(.3);
+            }
+
+            .img-list img:nth-of-type(2) {
+                right: -84px;
+            }
+
+            .img-list img:nth-of-type(3) {
+                right: -84px;
+                bottom: 0px;
+            }
+
+            .study .body .desc {
+                padding-right: 20px;
+                padding-left: 60px;
+                font-size: 24px;
+            }
+
+            .study .body .desc:before {
+                top: 3px;
+                left: 10px;
+            }
+
+            .study .map-image {
+                width: 100%;
+            }
+
+            .study .three-img {
+                padding-bottom: 60px;
+            }
+
+            .news .title {
+                font-size: 24px;
+            }
+
+            .news-text {
+                font-size: 24px;
+                padding: 20px 6px 20px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="nav" class="clearfix">
+    <div class="title fl">
+        <h1><a href="index.html">WELCOME</a></h1>
+    </div>
+    <div class="nav-bar" id="navBar">
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+    <div class="nav-list fr">
+        <ul class="nav-list-wrap" id="listWrap">
+            <li class="nav-list-item fl"><a href="projects.html">PROJECTS</a></li>
+            <li class="nav-list-item fl"><a href="index.html.html">PROFILE</a></li>
+            <li class="nav-list-item fl"><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="content">
+    <div class="image-box">
+        <img class="image" src="img/EF1.png" alt="">
+        <div class="text-wrap">
+            <div class="text-group font-rebellion">
+                <p class="text">EMERGING TECHNOLOGY I</p>
+                <p class="text">DIGITAL ASSISTANT</p>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="title font-rebellion">PROJECT DESCRIPTION</div>
+        <div class="info-text">
+            <div class="info-content">
+                Emerging technology is rapidly reshapping our world and human interaction
+                with robots. Digital assistant powered by artificial itellegent is constanstly
+                learned about human behaviors and individual preference. Through research
+                and studies, this project will revel the possibilities of digital assistant as aid in
+                future senairo.
+            </div>
+        </div>
+        <div class="date">20191007</div>
+    </div>
+    <div class="ideas clearfix">
+        <img class="fl ideas-image" src="img/3d_2.jpg">
+        <div class="fr ideas-content">
+            <div class="ideas-title font-rebellion">RESEARCH & IDEAS</div>
+            <div class="ideas-text">Digital assistant can be divided into either voice control or text input as control.
+                This map mainly focused on Voice User interface and related technology that used in the process. Lower
+                right corner illustrated the possible task and senario personal digital assistant application is used
+                for. By improving the efficiency of informaiton research and ability of electronic controls, digital
+                assistant can alter user behavior and provides a more convenient individualized experience.
+            </div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div class="study">
+        <div class="common-head font-rebellion clearfix">
+            <div class="number">2D</div>
+            <div class="title">
+                <div class="high">STUDY</div>
+                <div class="desc">DECENTRALIZED DIGITAL ASSISTANT</div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="img-list">
+                <img class="img-1" src="img/2d_1.png" alt="">
+                <img class="img-2" src="img/2d_2.png" alt="">
+                <img class="img-3" src="img/2d_3.png" alt="">
+            </div>
+            <div class="desc">Digital assistant in the future can play a big role in aiding people to fulfill their task
+                and goal. According to the research from Pauline E. Johansson, they gave 67 nursing students get access
+                to personal digital assistant in clinical practice. After 15 weeks of intervention study, the results
+                shows that PDA (Personal Digital Assistant) was a useful tool to help students learn expanding health
+                related knowledge, time saving, and contribute to improved patient safety and quality of care. With
+                current technology, personal assistant can already provides some helps for people to achieve their task
+                in a more easy and efficient manner. Imagine in the future, under the rapid development speed of
+                artificial intelligent, what kind of capabilities personal assistant will have and able to do.
+            </div>
+            <div class="desc">Majority of the digital assistant that exist in current market is trained by giant
+                technology corporations. One of the concerns that raised from this system is personal privacy issue. A
+                central corporation is constantly collecting verbal, decisional and behavioral information from their
+                user once they downloaded the application. Everything from the consumers and user side is transparent
+                and digitalized at corporation’s data base, but the actual usage of the data will only keep inside the
+                cooperation.
+            </div>
+            <div class="map-image">
+                <img src="img/2d_4.jpg" alt="">
+            </div>
+            <div class="desc">Instead of having corporation to train artificial intelligent, this decentralized
+                application provides a framework of rapid learning personal assistance, which its user can determined
+                what kind of skills their PDA should obtain and learn while maintaining all the data privately. The main
+                interface of the application includes an area map on the left, progress, and functional button on the
+                right. According to Donella H. Meadows Thinking in Systems, the composition of systems includes three
+                main parts : Elements, Interconnections, and Functions/Purposes. In this application, each Learn and
+                Skills will be specific on a single information or area. By having the map of locations (symbolized for
+                different aspects of task) that user involved, personal digital assistant can better learn the
+                interrelationship between content. Therefore, while receiving a task that requires multi media or cross
+                platform ability, digital assistant can draw necessary elements out from the Learn and Skill set.
+                Finally, the user can even set up short term and long term goal in this application. Clearly
+                understanding the goal of the user, digital assistant can plan achievable steps and provides useful help
+                during the process.
+            </div>
+        </div>
+    </div>
+    <div class="study">
+        <div class="common-head font-rebellion">
+            <div class="number">3D</div>
+            <div class="title">
+                <div class="high">STUDY</div>
+                <div class="desc">DIGITAL ASSISTANT NARRATIVE</div>
+            </div>
+        </div>
+        <div class="three-img">
+            <video width="1400" controls>
+        <source src="img/EGG01.mp4" type="video/mp4">
+        </video>
+        </div>
+        <div class="body">
+            <div class="desc">For 3D study, I continue on developing with the concepts of digital assistant as great
+                human
+                personal helper in the future. This time I want to develop a short narrative about digital assistant.
+                Therefore, I planed to have a augmented reality experience to delivery the content. The background
+                setting
+                about this story is: In near future, as the technology development became more advanced, every persons
+                has
+                their own personal assistance. The owner has the authority to modify their personal assistant avatar and
+                skills. At one point, there is a great technology break through, which enable the speed of processing
+                power
+                to be faster than the speed of lights. Which means, if the digital assistant got command from their
+                owner to
+                travel back in time in digital space, they can. Therefore, this is the first message you (the user) will
+                receive from the future you through digital assistant.
+            </div>
+            <div class="desc">
+                Making this project, I used EGG key card as an image target to evoke the Augmented Reality experience.
+                Collaborated with a MFA student Jiaqi, we together brainstorm about the conversation and wrote down the
+                speech. I later on take the written version of text and used a text-speech generator and give it a
+                verbal
+                sound. To make the sound background more digitalized, I edit the voice by adding multiple glitch sound
+                layers in iMovie then export out as a MP4 file. I downloaded the model and effects from Unity Assets
+                store
+                and animated the model to have gesture with Mixamo. In Unity, I used Vuforia augmented reality to turn
+                the
+                EGG key card into an image target. I coded to only awake the sound and video play when the image
+                targeted is
+                detected. Moreover, in order to have a better experience, when the story begin if the model is not
+                detected
+                for couple seconds, the animation and sound will keep playing. Finally, I edit the player setting and
+                Vuforia setting to make the application split screen, so that player can have the option to put on a VR
+                cardboard headset.
+            </div>
+            <div class="news">
+                <div class="title font-rebellion">FUTURE IMPROVEMENT</div>
+                <div class="news-text">
+                    If I have more time in the future, I want to develop this project further. The current story is
+                    relatively short and unfinished. I want to play with camera and have a more dynamic change of scene.
+                    Moreover, there should be more interactive elements in the project so that the user can feel more
+                    immersive in the story.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer" class="clearfix">
+    <a class="font-rebellion fl" href="">HONGXI CHEN</a>
+    <a class="font-rebellion fr" href="">NEXT PROJECT</a>
+</div>
+<script src="./js/common.js" defer></script>
+</body>
+
+</html>

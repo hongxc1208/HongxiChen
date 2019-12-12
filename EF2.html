@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Product</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body {
+            font-size: 62.5%;
+            background-color: #000;
+        }
+
+        .image-box {
+            position: relative;
+        }
+
+        .image-box:not(:first-of-type) {
+            margin: 22px 0;
+        }
+
+        .text-wrap {
+            position: absolute;
+            right: 0;
+            top: 42%;
+            /* padding: 18px 0; */
+            border-right: 20px solid #add268;
+            font-size: 60px;
+            height: 34%;
+        }
+
+        .text-group {
+            position: relative;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .text-group .text {
+            text-align: right;
+            padding-right: 40px;
+            line-height: 1.4;
+        }
+
+        .text-group .text:first-of-type {
+            font-size: 40px;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .info {
+            padding-top: 136px;
+            position: relative;
+        }
+
+        .info .title {
+            font-size: 6em;
+            text-align: center;
+            padding-bottom: 46px;
+        }
+
+        .info-text {
+            width: 1198px;
+            box-sizing: border-box;
+            margin: 20px auto;
+            line-height: 1.5;
+            font-size: 3em;
+            border-left: 14px solid #add268;
+            padding-left: 30px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .info-content {
+            margin-top: -4px;
+        }
+
+        .info .date {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: calc(10% - 150px);
+            margin-left: calc(50% - 100px);
+            font-size: 1.5em;
+            font-weight: 800;
+            transform-origin: left top;
+            transform: rotate(90deg);
+        }
+
+        .ideas {
+            width: 1728px;
+            padding-top: 182px;
+            margin: 0 auto;
+        }
+
+        .ideas-image {
+            width: 60%;
+        }
+
+        .ideas-content {
+            width: 40%;
+            box-sizing: border-box;
+            padding-left: 70px;
+        }
+
+        .ideas-title {
+            font-size: 4em;
+            padding-top: 50px;
+        }
+
+        .ideas-text {
+            line-height: 1.9;
+            padding-top: 60px;
+            padding-bottom: 28px;
+            font-size: 2.4em;
+        }
+
+        .ideas .line {
+            width: 120px;
+            height: 14px;
+            background-color: #add268;
+        }
+
+        .study {
+            width: 1406px;
+            margin: 0 auto;
+            padding-top: 226px;
+        }
+
+        .common-head {
+            padding-bottom: 100px;
+        }
+
+        .common-head .number {
+            color: #f4d323;
+            float: left;
+            font-size: 120px;
+        }
+
+        .common-head .title {
+            float: left;
+            padding-top: 20px;
+            font-size: 40px;
+            padding-left: 14px;
+        }
+
+        .common-head .high {
+            color: #f4d323;
+        }
+
+        .img-list {
+            height: 784px;
+            position: relative;
+        }
+
+        .img-list img {
+            position: absolute;
+        }
+
+        .img-list img:nth-of-type(1) {
+            left: 86px;
+        }
+
+        .img-list img:nth-of-type(2) {
+            right: 232px;
+        }
+
+        .img-list img:nth-of-type(3) {
+            right: 128px;
+            bottom: 66px;
+        }
+
+        .study .body {
+            padding-left: 90px;
+        }
+
+        .study .desc {
+            font-size: 30px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .study .desc:not(:last-of-type) {
+            margin-bottom: 82px;
+        }
+
+        .study .body .desc:before {
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            content: '';
+            left: -54px;
+            top: 8px;
+            background-color: #f4d323;
+        }
+
+        .study .map-image {
+            padding-top: 96px;
+            padding-bottom: 90px;
+        }
+
+        .study .map-image img {
+            width: 100%;
+        }
+
+        .study .three-img {
+            padding-top: 80px;
+            padding-bottom: 124px;
+        }
+
+        .three-img img {
+            width: 100%;
+        }
+
+        .news {
+            margin-top: 154px;
+            padding-bottom: 524px;
+        }
+
+        .news .title {
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .news-text {
+            font-size: 30px;
+            line-height: 1.6;
+            padding-top: 20px;
+        }
+        
+        @media (max-width: 1700px) {
+            .info-text,
+            .study {
+                width: 100%;
+            }
+            .img-list img:nth-of-type(1) {
+                left: -30px;
+            }
+            .img-list img:nth-of-type(2) {
+                right: 0;
+            }
+            .img-list img:nth-of-type(3) {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .study .body {
+                padding-left: 20px;
+            }
+
+            .ideas-image {
+                width: 100%;
+            }
+
+            .ideas {
+                width: 100%;
+                padding-top: 100px;
+            }
+
+            .ideas-content {
+                width: 100%;
+                padding-left: 20px;
+            }
+
+            .common-head .number {
+                width: 15%;
+                padding-left: 2px;
+                font-size: 68px;
+            }
+
+            .common-head .title {
+                padding: 0;
+                width: 84%;
+                font-size: 24px;
+            }
+
+            .study {
+                width: 100%;
+                padding-top: 100px;
+            }
+            .img-list img {
+                transform: scale(.6);
+            }
+            .img-list img:nth-of-type(1) {
+                left: -84px;
+                transform: scale(.3);
+            }
+
+            .img-list img:nth-of-type(2) {
+                right: -31px;
+            }
+
+            .img-list img:nth-of-type(3) {
+                right: -25px;
+                bottom: 0px;
+            }
+            .text-wrap {
+                font-size: 44px;
+            }
+
+            .text-group .text:first-of-type {
+                font-size: 28px;
+            }
+
+            .info .title {
+                font-size: 4em;
+            }
+
+            .info-text {
+                width: 90%;
+                margin: 20px 0;
+            }
+
+            .info .date {
+                font-size: 2em;
+                margin-top: calc(10% - 100px);
+                margin-left: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .info {
+                padding-top: 78px;
+            }
+
+            .text-wrap {
+                font-size: 20px;
+            }
+
+            .text-group .text:first-of-type {
+                font-size: 14px;
+            }
+
+            .info .title {
+                font-size: 2.2em;
+            }
+
+            .info-text {
+                width: 90%;
+                margin: 20px 0;
+                font-size: 2.5em;
+            }
+
+            .info .date {
+                font-size: 2em;
+                margin-top: calc(10% - 140px);
+                margin-left: calc(50% - 10px);
+            }
+
+            .ideas-text {
+                padding-top: 32px;
+            }
+
+            .ideas-title {
+                font-size: 2.8em;
+            }
+
+            .common-head {
+                padding-bottom: 0;
+            }
+
+            .common-head .number {
+                width: 15%;
+                padding-left: 1px;
+                font-size: 33px;
+            }
+
+            .common-head .title {
+                padding: 0;
+                width: 84%;
+                font-size: 16px;
+            }
+
+            .study .common-head .desc {
+                width: 150%;
+                font-size: inherit;
+            }
+
+            .study .body {
+                padding-left: 0;
+                overflow: hidden;
+            }
+
+            .img-list {
+                margin-left: -100px;
+                height: 500px;
+            }
+
+            .img-list img {
+                transform: scale(.4);
+            }
+
+            .img-list img:nth-of-type(1) {
+                left: -84px;
+                transform: scale(.3);
+            }
+
+            .img-list img:nth-of-type(2) {
+                right: -84px;
+            }
+
+            .img-list img:nth-of-type(3) {
+                right: -84px;
+                bottom: 0px;
+            }
+
+            .study .body .desc {
+                padding-right: 20px;
+                padding-left: 60px;
+                font-size: 24px;
+            }
+
+            .study .body .desc:before {
+                top: 3px;
+                left: 10px;
+            }
+
+            .study .map-image {
+                width: 100%;
+            }
+
+            .study .three-img {
+                padding-bottom: 60px;
+            }
+
+            .news .title {
+                font-size: 24px;
+            }
+
+            .news-text {
+                font-size: 24px;
+                padding: 20px 6px 20px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="nav" class="clearfix">
+    <div class="title fl">
+        <h1><a href="index.html">WELCOME</a></h1>
+    </div>
+    <div class="nav-bar" id="navBar">
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+    <div class="nav-list fr">
+        <ul class="nav-list-wrap" id="listWrap">
+            <li class="nav-list-item fl"><a href="projects.html">PROJECTS</a></li>
+            <li class="nav-list-item fl"><a href="index.html.html">PROFILE</a></li>
+            <li class="nav-list-item fl"><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="content">
+    <div class="image-box">
+        <img class="image" src="img/EFII.png" alt="">
+        <div class="text-wrap">
+            <div class="text-group font-rebellion">
+                <p class="text">EMERGING TECHNOLOGY II</p>
+                <p class="text">DIGITAL ASSISTANT</p>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="title font-rebellion">PROJECT DESCRIPTION</div>
+        <div class="info-text">
+            <div class="info-content">
+                Continue developing on the narrative of future digital assistant, I explored a creative way to performance storytelling through spatial augmented reality technology. For now, digital assistant powered by artificial intelligent is still at its early development stage, which has great potential to become a vital role to help human complete future task. The story reflects the interaction between intelligent machine and human in an extreme situation. Though the implementation of plane detection and multi player functionality,  virtual components in scenes can be viewed by both actors and audience at the same time.
+            </div>
+        </div>
+        <div class="date">20190928</div>
+    </div>
+    <div class="ideas clearfix">
+        <img class="fl ideas-image" src="img/SNM.jpg">
+        <div class="fr ideas-content">
+            <div class="ideas-title font-rebellion">RESEARCH & IDEAS</div>
+            <div class="ideas-text">Having the idea of creating an immersive theater narrative, I interviewed Jiaqi Liu, who previously working at Sleep No More in Shanghai and was the president of her college drama club. She introduced Jinghui Meng, a Chinese artist who created experimental theater with technology, where give me a lot of inspiration to combine digital projections and sounds to generate an atmosphere. She also mentioned the inconvenience of physical installation and high possibility of damaged. Learned from the interview, I understand more about the actor/audience perspective and important factors of creating an immersive atmosphere.
+            </div>
+            <div class="line"></div>
+            
+        </div>
+    </div>
+
+
+
+
+    <div class="study">
+        <div class="common-head font-rebellion clearfix">
+            <div class="number">#1</div>
+            <div class="title">
+                <div class="high">PART</div>
+                <div class="desc">BACKGROUND STORY</div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="map-image">
+                <img src="img/DV.png" alt="">
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+    </div>
+            <div class="map-image">
+            <img src="img/EarthGone.png" alt="">
+            </div>
+            <div class="desc">The final presentation is seperated into two parts but with same background setting, therefore, I started with develop the narrative background: <br>At the year of 2049, space travel become a common method for people to entertain, and of course, for scientists to explore the secrets of the Universe. Even though there are significant amount of new planets discovered, Earth, is still the only planet that contains life forms — the home of all mankind.
+            <h1>&nbsp</h1>
+            <br>At 2049, November 18th, 1:55 am (Earth time): As a freelance scientist, I was sitting in my spaceship traveling at the corner of Milky Way Galaxy to enjoy the beautiful view of distant stars. Suddenly, there was a great gravity pull that shake the whole spaceship to oscillate. My digital assistants Cibo reported after few seconds, “Earth is gone.” Later, this information appeared on the news, internet, radio, it surprised and terrified all survival human. The home of all mankind disappeared.
+
+            <h1>&nbsp</h1>
+            <br>Major investigation centers and remain government scientists dispatched their digital assistant to travel through time to the moments before Earth is gone, eager for finding out the cause and backstage manipulator. However, because of the lacking of prodigy, investigations so far barely shows any progress.
+
+            <h1>&nbsp</h1>
+            <br>At the same time, there are many important spaceship with massive data and experts are disappearing in the universe for unknown reasons and nowhere to be found.
+            </div>
+
+            <div class="map-image">
+            <img src="img/Video.png" alt="">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="study">
+        <div class="common-head font-rebellion clearfix">
+            <div class="number">#2</div>
+            <div class="title">
+                <div class="high">AUGMENTED REALITY</div>
+                <div class="desc">IMMERSIVE PERFORMANCE</div>
+            </div>
+        </div>
+        <div class="body">
+
+            <div class="map-image">
+            <img src="img/Script.png" alt="">
+            <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+
+            <img src="img/EF2Tech.png" alt="">
+            </div>
+            <div class="desc">Second part is also made in Unity, I spend majority of my time to experiment with different SDK and functionalities. Unfortunately, Placenote SDK recently remove spatial capture functionality from current SDK version, therefore I couldn’t use point cloud data and have to find alternative plane detection to place object. I also played with lip Sync plug-in to generate character facial expression. However, model with blend shape data was very big in size which Mixamo has trouble receiving the file. Thus, I decided to go with Vuforia Plane Detection and Mixamo for character animation. I download some prefab models from Unity assets store and connected them with #C script to invoke at the right timing. Then music background and pre-record digital assistant’s voice were added.
+            <div class="map-image">
+            <img src="img/UserTest.png" alt="">
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+                <h1>&nbsp</h1>
+            <div class="desc">Through user testing, I shown them the final video record version and learn many useful feedback. One of them point out details of objects in background story part, and by adding baggages can more clearly show the point of travel. I also got feedback of how to make the report part more realistic and by having dual language – English and Chinese, can make the report sounds more international. Therefore, I asked two of my friends later to add the report voice over.
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+ <div class="info">
+        <div class="title font-rebellion">THE FINAL</div>
+        <div class="info-text">
+            <div class="info-content">
+                Copy the link below to see the video:
+                https://drive.google.com/file/d/1Ft2KwfV4FjFb8th39IWh0MlpJXDOjjwO/view?usp=sharing
+            </div>
+        </div>
+    </div>
+
+
+<div class="study">
+        
+            <div class="news">
+                <div class="title font-rebellion">FUTURE IMPROVEMENT</div>
+                    <div class="news-text">
+                    <div class="map-image">
+                    <img src="img/futureAR.png" alt="">
+                    </div>
+                    For future improvement, I want to improve these aspects: character detail like facial expression and gesture; more stable plane detection and virtual object placement; Voice control functionality. Through this project I explore technical possibilities and a new ways of immersive storytelling. Looking into the future of theater and gaming, both can be organically combine with virtual object and physical space. It can helps to create an entire new experience and engage people into the reality. This solution can also eliminate unnecessary installations and prop in the room and reduce chance of physical damage.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div id="footer" class="clearfix">
+    <a class="font-rebellion fl" href="">HONGXI CHEN</a>
+    <a class="font-rebellion fr" href="">NEXT PROJECT</a>
+</div>
+<script src="./js/common.js" defer></script>
+</body>
+
+</html>
